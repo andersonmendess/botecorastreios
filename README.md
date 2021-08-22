@@ -1,7 +1,17 @@
-# botecorastreios
+# Boteco Rastreios
+A minimal correios package tracker application made using Flutter.
 
-A new Flutter project.
+## Screenshots
 
+<p float="left">
+
+<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-53.jpg" width="310">
+<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-49.jpg" width="310">
+<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-53.jpg" width="310">
+ </p>
+ 
+ Thanks to Boteco Builders BR's group
+ 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
