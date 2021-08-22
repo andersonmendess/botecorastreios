@@ -5,9 +5,9 @@ A minimal correios package tracker application made using Flutter.
 
 <p float="left">
 
-<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-53.jpg" width="310">
-<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-49.jpg" width="310">
-<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-53.jpg" width="310">
+<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-53.jpg" width="290">
+<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-49.jpg" width="290">
+<img src="https://github.com/Andersonmendess/botecorastreios/blob/master/screenshots/photo_2021-08-22_19-51-41.jpg" width="290">
  </p>
  
  Thanks to Boteco Builders BR's group
