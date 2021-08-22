@@ -1,10 +1,43 @@
+// import 'package:flt_worker_nullsafety/flt_worker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get_storage/get_storage.dart';
+// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'home_screen.dart';
+import 'ui/screens/home_screen.dart';
 
-void main() {
+// final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+// final initializationSettingsAndroid = AndroidInitializationSettings('app_icon');
+// final initializationSettings =
+//     InitializationSettings(android: initializationSettingsAndroid);
+
+// Future<void> worker(WorkPayload payload) async {
+//   print(payload.id);
+//   print("EXECUTANDO A TASK");
+//   const androidPlatformChannelSpecifics = AndroidNotificationDetails(
+//     '13',
+//     'botecorastreios',
+//     'notificações sobre rastreio',
+//     importance: Importance.max,
+//     priority: Priority.high,
+//     showWhen: false,
+//   );
+//   const platformChannelSpecifics =
+//       NotificationDetails(android: androidPlatformChannelSpecifics);
+
+//   await flutterLocalNotificationsPlugin.show(
+//       12, 'Memória RAM', 'Entrega Efetuada 2', platformChannelSpecifics,
+//       payload: 'item x');
+
+//   return Future.value();
+// }
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
+  //flutterLocalNotificationsPlugin.initialize(initializationSettings, onSelectNotification: (_) async {});
   runApp(MyApp());
+  // initializeWorker(worker);
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +45,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsFlutterBinding.ensureInitialized();
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       systemNavigationBarColor: Color(0xFF242526),
@@ -24,6 +56,13 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+
+    // enqueueWorkIntent(WorkIntent(
+    //   repeatInterval: Duration(seconds: 30),
+    //   identifier: 'counter',
+    //   initialDelay: Duration(seconds: 10),
+    //   input: <String, dynamic>{},
+    // ));
 
     return MaterialApp(
       title: 'Flutter Demo',

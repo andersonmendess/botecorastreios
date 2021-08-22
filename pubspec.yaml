@@ -24,9 +24,13 @@ dependencies:
   flutter:
     sdk: flutter
   bottom_sheet: ^1.0.1
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  correiostracking:
+    git: git@github.com:andersonmendess/correiostracking
   cupertino_icons: ^1.0.2
+  #flt_worker_nullsafety: ^0.2.0-nullsafety.0
+  #flutter_local_notifications: ^8.1.1+1
+  get_storage: ^2.0.3
+  timeago: ^3.1.0
 
 dev_dependencies:
   flutter_test:

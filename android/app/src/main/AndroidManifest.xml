@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.andersu.dev.botecorastreios.botecorastreios">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="botecorastreios"
+        android:label="Boteco Rastreios"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
