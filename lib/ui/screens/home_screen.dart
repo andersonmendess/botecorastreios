@@ -45,36 +45,52 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   fetch() async {
-    for (ItemModel element in data) {
-      final info = await CorreiosTracking.track(element.code);
+    data.forEach((element) {
+      CorreiosTracking.track(element.code).then((info) {
+        if (info != null) {
+          element.info = info;
+          setState(() {});
 
-      if (info != null) {
-        element.info = info;
-        setState(() {});
+          if (info.isEmpty) forceFetch(element);
+        }
+      });
+    });
+  }
 
-        if (info.isEmpty) forceFetch(element);
-      }
+  Future<void> singleFetch(ItemModel item) async {
+    final info = await CorreiosTracking.track(item.code);
+
+    if (info == null || info.isEmpty) {
+      forceFetch(item);
+    } else {
+      item.info = info;
+      setState(() {});
     }
   }
 
   forceFetch(ItemModel item) async {
     int tries = 0;
 
-    Timer.periodic(Duration(seconds: 1), (t) async {
+    Future.doWhile(() async {
       print("forceFetch(${item.title})");
-      if (tries >= 3) {
-        t.cancel();
-        return;
-      }
-      tries++;
-
       final info = await CorreiosTracking.track(item.code);
 
       if (info != null && info.isNotEmpty) {
         item.info = info;
-        t.cancel();
         setState(() {});
       }
+
+      if (item.info.isNotEmpty) {
+        return false;
+      }
+
+      if (tries >= 3) {
+        return false;
+      }
+
+      tries++;
+
+      return true;
     });
   }
 
@@ -92,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return buildNewItemComponent(context, _, __, (ItemModel newItem) {
                 data.add(newItem);
                 setState(() {});
-                fetch();
+                singleFetch(newItem);
 
                 final packages =
                     jsonEncode(data.map((e) => e.toMap()).toList());
