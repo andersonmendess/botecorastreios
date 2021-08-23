@@ -33,7 +33,8 @@ Widget buildItemDetailsComponent(BuildContext context, ItemModel item) {
                           style: TextStyle(fontSize: 12),
                         ),
                   trailing: Text(
-                    timeago.format(parseDateTime(e.date, e.time)),
+                    timeago.format(parseDateTime(e.date, e.time),
+                        locale: 'pt_br'),
                     style: TextStyle(fontSize: 12),
                   ),
                 ),

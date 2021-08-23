@@ -256,7 +256,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   : timeago.format(
                                       parseDateTime(
                                           e.info.first.date, e.info.first.time),
-                                    ),
+                                      locale: 'pt_br'),
                               style: TextStyle(fontSize: 12),
                             ),
                           ),

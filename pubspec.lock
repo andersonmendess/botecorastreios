@@ -273,10 +273,12 @@ packages:
   timeago:
     dependency: "direct main"
     description:
-      name: timeago
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.0"
+      path: "."
+      ref: timeago
+      resolved-ref: "87d22a005f7191a8061b9f7499d2293b93ebffe1"
+      url: "git://github.com/andersonmendess/timeago.dart"
+    source: git
+    version: "3.1.1"
   typed_data:
     dependency: transitive
     description:
