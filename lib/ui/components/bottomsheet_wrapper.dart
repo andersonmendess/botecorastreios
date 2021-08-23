@@ -28,7 +28,7 @@ class BottomSheetWrapper extends StatelessWidget {
           child: Stack(alignment: Alignment.bottomRight, children: [
             Positioned(
               top: 170,
-              left: 200,
+              left: 160,
               child: Image.asset(
                 "assets/beer.png",
                 width: 250,
@@ -36,6 +36,9 @@ class BottomSheetWrapper extends StatelessWidget {
               ),
             ),
             Container(
+              constraints: BoxConstraints(
+                minHeight: subtitle != null ? 500 : 390,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
